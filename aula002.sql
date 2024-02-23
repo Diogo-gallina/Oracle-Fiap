@@ -72,14 +72,27 @@ BEGIN
     END IF;
 END;
 
--- EX 6
+--EX 6
 DECLARE
-    NUME NUMBER := &NUMERO;
+    NUMERO NUMBER := &NUMERO;
 BEGIN
-    IF MOD(NUME, 2) = 0 THEN
+    IF MOD(NUMERO, 2) = 0 THEN
         dbms_output.put_line('PAR');
     ELSE 
         dbms_output.put_line('IMPAR');
+    END IF;
+END;
+
+--EX 7
+DECLARE
+    NUMERO NUMBER := &NUMERO;
+BEGIN
+    IF NUMERO > 0 THEN
+        dbms_output.put_line('POSITIVO');
+    ELSIF NUMERO < 0 THEN
+        dbms_output.put_line('NEGATIVO');
+    ELSE 
+        dbms_output.put_line('ZERO');
     END IF;
 END;
 
