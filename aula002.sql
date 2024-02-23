@@ -40,27 +40,28 @@ begin
 END;
 
 --EX4
-declare
-
-    valor_compra number := &VALOR;
-    entrada number;
-    valor_sem_entrada number;
-    seis_p number;
-    doze_p number;
-    dezoito_p number;
+DECLARE
+    VALOR_CARRO NUMBER := &VALOR_DO_CARRO;
+    PARCELA_6 NUMBER;
+    PARCELA_12 NUMBER;
+    PARCELA_18 NUMBER;
+BEGIN
+    VALOR_CARRO := VALOR_CARRO-VALOR_CARRO*0.20;
     
-begin
-
-    entrada := valor_compra * 0.2;
-    valor_sem_entrada := valor_compra - entrada;
+    PARCELA_6 := VALOR_CARRO*1.10;
+    PARCELA_12 := VALOR_CARRO*1.15;
+    PARCELA_18 := VALOR_CARRO*1.20;
     
-    seis_p := valor_sem_entrada + valor_sem_entrada * 0.1;
-    doze_p := valor_sem_entrada + valor_sem_entrada * 0.15;
-    dezoito_p := valor_sem_entrada + valor_sem_entrada * 0.2;
+    dbms_output.put_line('VALOR A SER FINANCIADO = '|| VALOR_CARRO);
+    dbms_output.put_line('6 parcelas = '|| PARCELA_6);
+    dbms_output.put_line('12 parcelas = '|| PARCELA_12);
+    dbms_output.put_line('18 parcelas = '|| PARCELA_18);
     
-    dbms_output.put_line('Entrada = '|| entrada);
-    dbms_output.put_line('6 parcelas = '|| seis_p);
-    dbms_output.put_line('12 parcelas = '|| doze_p);
-    dbms_output.put_line('18 parcelas = '|| dezoito_p);
+END;    
     
-END;
+    
+    
+    
+    
+    
+    
