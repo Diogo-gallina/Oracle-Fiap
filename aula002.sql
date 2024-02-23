@@ -63,9 +63,9 @@ END;
 DECLARE
     SEXO CHAR := '&SEXO';
 BEGIN
-    IF SEXO='M' OR SEXO='m' THEN
+    IF UPPER(SEXO)='M' THEN
         dbms_output.put_line('MASCULINO');
-    ELSIF SEXO='F' OR SEXO='f' THEN
+    ELSIF UPPER(SEXO)='F' THEN
         dbms_output.put_line('FEMININO');
     ELSE 
         dbms_output.put_line('OUTROS');
