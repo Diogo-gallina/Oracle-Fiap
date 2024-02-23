@@ -72,6 +72,16 @@ BEGIN
     END IF;
 END;
 
+-- EX 6
+DECLARE
+    NUME NUMBER := &NUMERO;
+BEGIN
+    IF MOD(NUME, 2) = 0 THEN
+        dbms_output.put_line('PAR');
+    ELSE 
+        dbms_output.put_line('IMPAR');
+    END IF;
+END;
 
 
 
