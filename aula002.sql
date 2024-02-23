@@ -57,7 +57,27 @@ BEGIN
     dbms_output.put_line('12 parcelas = '|| PARCELA_12);
     dbms_output.put_line('18 parcelas = '|| PARCELA_18);
     
-END;    
+END;
+
+--EX 5
+DECLARE
+    SEXO CHAR := '&SEXO';
+BEGIN
+    IF SEXO='M' OR SEXO='m' THEN
+        dbms_output.put_line('MASCULINO');
+    ELSIF SEXO='F' OR SEXO='f' THEN
+        dbms_output.put_line('FEMININO');
+    ELSE 
+        dbms_output.put_line('OUTROS');
+    END IF;
+END;
+
+
+
+
+
+
+
     
     
     
