@@ -96,6 +96,25 @@ BEGIN
     END IF;
 END;
 
+--EX 8
+DECLARE
+    NOTA NUMBER := &NOTA;
+BEGIN
+    IF NOTA >= 90 THEN
+        dbms_output.put_line('A');
+    ELSIF NOTA >= 80 THEN
+        dbms_output.put_line('B');
+    ELSIF NOTA >= 70 THEN
+        dbms_output.put_line('C');
+    ELSIF NOTA >= 60 THEN
+        dbms_output.put_line('D');
+    ELSIF NOTA < 60 AND NOTA > 0 THEN
+        dbms_output.put_line('F');
+    ELSIF NOTA > 100 OR NOTA < 0 THEN
+        dbms_output.put_line('VALOR INVÁLIDO');
+    END IF;
+END;
+
 
 
 
